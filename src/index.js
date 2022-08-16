@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createGlobalStyle } from 'styled-components';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createGlobalStyle } from "styled-components";
 
-import App from './App';
+import App from "./App";
 
 const GlobalStylos = createGlobalStyle`
 
@@ -23,10 +23,20 @@ const GlobalStylos = createGlobalStyle`
   }
 
   body {
-    background-color: #000;
+    background-color: #181818;
     display: flex;
     justify-content: center;
     overflow-x: hidden;
+  }
+
+  body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #000;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 10px;
   }
 
   h1 {
@@ -34,12 +44,10 @@ const GlobalStylos = createGlobalStyle`
   }
 `;
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <GlobalStylos />
     <App />
   </React.StrictMode>
 );
-
